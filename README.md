@@ -1,7 +1,6 @@
-<div align="center">
 
 
-​    使用方式：1.在SoVITS_weights_v2和GPT_weights_v2文件夹下添加对应的模型文件（Sovits模型文件后缀为.pth,Gpt模型文件后缀为.ckpt）相应模型可以去[这里]( https://modelscope.cn/models/aihobbyist/GPT-SoVits-V2-models)下载
+使用方式：1.在SoVITS_weights_v2和GPT_weights_v2文件夹下添加对应的模型文件（Sovits模型文件后缀为.pth,Gpt模型文件后缀为.ckpt）相应模型可以去[这里]( https://modelscope.cn/models/aihobbyist/GPT-SoVits-V2-models)下载
 
 2.目前api_test3.py主要有丹恒，景元，卡芙卡和克拉拉四位角色，需要对应的在参考音频文件夹下添加对应角色对应情感的情绪 如：
 
@@ -37,6 +36,7 @@ http://127.0.0.1:9880/srt?text=怎么了，亲爱的&text_lang=zh&ref_audio_path
 
 
 <h1>GPT-SoVITS-WebUI</h1>
+
 A Powerful Few-shot Voice Conversion and Text-to-Speech WebUI.<br><br>
 
 [![madewithlove](https://img.shields.io/badge/made_with-%E2%9D%A4-red?style=for-the-badge&labelColor=orange)](https://github.com/RVC-Boss/GPT-SoVITS)
@@ -140,6 +140,7 @@ Download and place [ffmpeg.exe](https://huggingface.co/lj1995/VoiceConversionWeb
 Install [Visual Studio 2017](https://aka.ms/vs/17/release/vc_redist.x86.exe) (Korean TTS Only)
 
 ##### MacOS Users
+
 ```bash
 brew install ffmpeg
 ```
@@ -206,7 +207,6 @@ Language dictionary:
 - 'en': English
 - 'ko': Korean
 - 'yue': Cantonese
-  
 
 Example:
 
@@ -226,14 +226,15 @@ D:\GPT-SoVITS\xxx/xxx.wav|xxx|en|I like playing Genshin.
  #### Others
 
  ```bash
- python webui.py <language(optional)>
+python webui.py <language(optional)>
  ```
 
  if you want to switch to V1,then
 
  ```bash
- python webui.py v1 <language(optional)>
+python webui.py v1 <language(optional)>
  ```
+
 Or maunally switch version in WebUI
 
  ### Finetune
@@ -261,13 +262,15 @@ Or maunally switch version in WebUI
  #### Others
 
  ```bash
- python GPT_SoVITS/inference_webui.py <language(optional)>
+python GPT_SoVITS/inference_webui.py <language(optional)>
  ```
+
  OR
 
  ```bash
- python webui.py
+python webui.py
  ```
+
 then open the inference webui at `1-GPT-SoVITS-TTS/1C-inference`
 
  ## V2 Release Notes
@@ -282,7 +285,7 @@ New Features:
 
 4. Improved synthesis quality for low-quality reference audio 
 
-    [more details](https://github.com/RVC-Boss/GPT-SoVITS/wiki/GPT%E2%80%90SoVITS%E2%80%90v2%E2%80%90features-(%E6%96%B0%E7%89%B9%E6%80%A7) ) 
+   [more details](https://github.com/RVC-Boss/GPT-SoVITS/wiki/GPT%E2%80%90SoVITS%E2%80%90v2%E2%80%90features-(%E6%96%B0%E7%89%B9%E6%80%A7) ) 
 
 Use v2 from v1 environment: 
 
@@ -292,8 +295,8 @@ Use v2 from v1 environment:
 
 3. Download v2 pretrained models from [huggingface](https://huggingface.co/lj1995/GPT-SoVITS/tree/main/gsv-v2final-pretrained) and put them into `GPT_SoVITS\pretrained_models\gsv-v2final-pretrained`.
 
-    Chinese v2 additional: [G2PWModel_1.1.zip](https://paddlespeech.bj.bcebos.com/Parakeet/released_models/g2p/G2PWModel_1.1.zip)（Download G2PW models,  unzip and rename to `G2PWModel`, and then place them in `GPT_SoVITS/text`.
-    
+   Chinese v2 additional: [G2PWModel_1.1.zip](https://paddlespeech.bj.bcebos.com/Parakeet/released_models/g2p/G2PWModel_1.1.zip)（Download G2PW models,  unzip and rename to `G2PWModel`, and then place them in `GPT_SoVITS/text`.
+
 ## Todo List
 
 - [x] **High Priority:**
@@ -315,16 +318,21 @@ Use v2 from v1 environment:
   - [ ] model mix
 
 ## (Additional) Method for running from the command line
+
 Use the command line to open the WebUI for UVR5
+
 ```
 python tools/uvr5/webui.py "<infer_device>" <is_half> <webui_port_uvr5>
 ```
+
 <!-- If you can't open a browser, follow the format below for UVR processing,This is using mdxnet for audio processing
+
 ```
 python mdxnet.py --model --input_root --output_vocal --output_ins --agg_level --format --device --is_half_precision 
 ``` -->
 This is how the audio segmentation of the dataset is done using the command line
 ```
+
 python audio_slicer.py \
     --input_path "<path_to_original_audio_file_or_directory>" \
     --output_root "<directory_where_subdivided_audio_clips_will_be_saved>" \
@@ -332,16 +340,21 @@ python audio_slicer.py \
     --min_length <minimum_duration_of_each_subclip> \
     --min_interval <shortest_time_gap_between_adjacent_subclips> 
     --hop_size <step_size_for_computing_volume_curve>
+
 ```
 This is how dataset ASR processing is done using the command line(Only Chinese)
 ```
+
 python tools/asr/funasr_asr.py -i <input> -o <output>
+
 ```
 ASR processing is performed through Faster_Whisper(ASR marking except Chinese)
 
 (No progress bars, GPU performance may cause time delays)
 ```
+
 python ./tools/asr/fasterwhisper_asr.py -i <input> -o <output> -l <language> -p <precision>
+
 ```
 A custom list save path is enabled
 
@@ -382,3 +395,5 @@ Thankful to @Naozumi520 for providing the Cantonese training set and for the gui
 <a href="https://github.com/RVC-Boss/GPT-SoVITS/graphs/contributors" target="_blank">
   <img src="https://contrib.rocks/image?repo=RVC-Boss/GPT-SoVITS" />
 </a>
+
+```
