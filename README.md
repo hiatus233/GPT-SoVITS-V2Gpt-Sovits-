@@ -190,6 +190,7 @@ Language dictionary:
 - 'ko': Korean
 - 'yue': Cantonese
   
+
 Example:
 
 ```
@@ -223,15 +224,15 @@ Or maunally switch version in WebUI
  #### Path Auto-filling is now supported
 
      1.Fill in the audio path
-
+    
      2.Slice the audio into small chunks
-
+    
      3.Denoise(optinal)
-
+    
      4.ASR
-
+    
      5.Proofreading ASR transcriptions
-
+    
      6.Go to the next Tab, then finetune the model
 
  ### Open Inference WebUI
@@ -275,7 +276,7 @@ Use v2 from v1 environment:
 3. Download v2 pretrained models from [huggingface](https://huggingface.co/lj1995/GPT-SoVITS/tree/main/gsv-v2final-pretrained) and put them into `GPT_SoVITS\pretrained_models\gsv-v2final-pretrained`.
 
     Chinese v2 additional: [G2PWModel_1.1.zip](https://paddlespeech.bj.bcebos.com/Parakeet/released_models/g2p/G2PWModel_1.1.zip)（Download G2PW models,  unzip and rename to `G2PWModel`, and then place them in `GPT_SoVITS/text`.
-     
+    
 ## Todo List
 
 - [x] **High Priority:**
