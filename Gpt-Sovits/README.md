@@ -1,11 +1,7 @@
 <div align="center">
-使用方式：
 
-1.在SoVITS_weights_v2和GPT_weights_v2文件夹下添加对应的模型文件（Sovits模型文件后缀为.pth,Gpt模型文件后缀为.ckpt）相应模型可以去
 
-[这里]: https://modelscope.cn/models/aihobbyist/GPT-SoVits-V2-models
-
-下载
+​    使用方式：1.在SoVITS_weights_v2和GPT_weights_v2文件夹下添加对应的模型文件（Sovits模型文件后缀为.pth,Gpt模型文件后缀为.ckpt）相应模型可以去[这里]( https://modelscope.cn/models/aihobbyist/GPT-SoVits-V2-models)下载
 
 2.目前api_test3.py主要有丹恒，景元，卡芙卡和克拉拉四位角色，需要对应的在参考音频文件夹下添加对应角色对应情感的情绪 如：
 
