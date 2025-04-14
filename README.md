@@ -1,4 +1,25 @@
 <div align="center">
+使用方式：
+
+1.在SoVITS_weights_v2和GPT_weights_v2文件夹下添加对应的模型文件（Sovits模型文件后缀为.pth,Gpt模型文件后缀为.ckpt）相应模型可以去
+
+[这里]: https://modelscope.cn/models/aihobbyist/GPT-SoVits-V2-models
+
+下载
+
+2.目前api_test3.py主要有丹恒，景元，卡芙卡和克拉拉四位角色，需要对应的在参考音频文件夹下添加对应角色对应情感的情绪 如：
+
+```
+丹恒/开心_happy 丹恒/难过_sad   丹恒/生气_angry  丹恒/中立_neutral
+```
+
+3.双击启动接口.bat（如果是30系及40系显卡的话）
+4.等待本地服务器启动后，运行api_test3.py
+
+```python
+python3 api_test3.py
+```
+
 
 在官方：https://github.com/RVC-Boss/GPT-SoVITS 基础上修改,所有逻辑来自官方PR,如有侵权请联系删除
 
